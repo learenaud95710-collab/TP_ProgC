@@ -4,7 +4,7 @@ void afficher_binaire(unsigned int n) {
     int bits = sizeof(unsigned int) * 8;  // nombre de bits selon l'architecture
     int debut = 0; // pour éviter d'afficher les zéros de tête inutiles
 
-    printf("0b");
+    printf("Binaire : 0b");
 
     for (int i = bits - 1; i >= 0; i--) {
         if (n & (1U << i)) {   // test du i-ème bit
@@ -25,13 +25,15 @@ void afficher_binaire(unsigned int n) {
 }
 
 int main() {
-    unsigned int nombres[] = {0, 4096, 65536, 65535, 1024};
-    int taille = sizeof(nombres) / sizeof(nombres[0]);
+    unsigned int nombre;
 
-    for (int i = 0; i < taille; i++) {
-        printf("Nombre : %u\tBinaire : ", nombres[i]);
-        afficher_binaire(nombres[i]);
+    printf("Entrez un nombre entier positif : ");
+    if (scanf("%u", &nombre) != 1) {
+        printf("Erreur : saisie invalide.\n");
+        return 1;
     }
+
+    afficher_binaire(nombre);
 
     return 0;
 }
