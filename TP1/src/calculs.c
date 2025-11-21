@@ -1,11 +1,19 @@
-
 #include <stdio.h>
 
 int main() {
 
-    int num1 = 12;   // Exemple de valeur
-    int num2 = 5;    // Exemple de valeur
-    char op = '+';   // Opérateur à tester : '+', '-', '*', '/', '%', '&', '|', '~'
+    int num1, num2;
+    char op;
+
+    // Saisie de l'utilisateur
+    printf("Entrez le premier nombre : ");
+    scanf("%d", &num1);
+
+    printf("Entrez le second nombre : ");
+    scanf("%d", &num2);
+
+    printf("Entrez l'operateur (+, -, *, /, %%, &, |, ~) : ");
+    scanf(" %c", &op);  // espace avant %c pour consommer le retour à la ligne
 
     switch (op) {
         case '+':
@@ -47,10 +55,9 @@ int main() {
             break;
 
         default:
-            printf("Opérateur inconnu : %c\n", op);
+            printf("Operateur inconnu : %c\n", op);
             break;
     }
 
     return 0;
 }
-
