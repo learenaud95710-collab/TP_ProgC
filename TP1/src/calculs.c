@@ -1,19 +1,32 @@
 #include <stdio.h>
 
 int main() {
-
     int num1, num2;
     char op;
 
-    // Saisie de l'utilisateur
+    // Saisie de num1
     printf("Entrez le premier nombre : ");
-    scanf("%d", &num1);
+    if (scanf("%d", &num1) != 1) {
+        printf("Erreur : saisie invalide.\n");
+        return 1;
+    }
 
+    // Saisie de num2
     printf("Entrez le second nombre : ");
-    scanf("%d", &num2);
+    if (scanf("%d", &num2) != 1) {
+        printf("Erreur : saisie invalide.\n");
+        return 1;
+    }
 
+    // Vider le tampon pour éviter que le retour à la ligne ne soit lu
+    while (getchar() != '\n');
+
+    // Saisie de l'opérateur
     printf("Entrez l'operateur (+, -, *, /, %%, &, |, ~) : ");
-    scanf(" %c", &op);  // espace avant %c pour consommer le retour à la ligne
+    if (scanf("%c", &op) != 1) {
+        printf("Erreur : saisie invalide.\n");
+        return 1;
+    }
 
     switch (op) {
         case '+':
@@ -61,3 +74,5 @@ int main() {
 
     return 0;
 }
+
+
