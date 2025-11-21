@@ -32,13 +32,7 @@ int main() {
     }
 
     return 0;
-}
-
-#include <stdio.h>
-
-int main() {
-
-    int compteur = 5;  // Modifiez cette valeur (< 10)
+  int compteur = 5;  // Modifiez cette valeur (< 10)
     int i = 1;
 
     if (compteur >= 10) {
@@ -69,4 +63,7 @@ int main() {
 
     return 0;
 }
+
+
+
 
