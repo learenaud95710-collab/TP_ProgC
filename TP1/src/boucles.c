@@ -2,23 +2,19 @@
 
 int main() {
 
-    int compteur = 5;  // Modifiez cette valeur (doit être < 10)
+    int compteur = 5;  // Taille des triangles (< 10)
 
     if (compteur >= 10) {
         printf("Erreur : compteur doit être strictement inférieur à 10.\n");
         return 1;
     }
 
+    printf("=== Triangle avec boucles FOR ===\n");
+
+    // Triangle avec FOR
     for (int i = 1; i <= compteur; i++) {
         for (int j = 1; j <= i; j++) {
-
-            // Exemple de motif :
-            // Ligne 1 : *
-            // Ligne 2 : * *
-            // Ligne 3 : * # *
-            // Ligne 4 : * # # *
-            // Ligne 5 : * * * * *
-            
+            // Conditions pour afficher * ou #
             if (i == 1 || i == 2 || i == compteur) {
                 printf("* ");
             } else {
@@ -31,20 +27,13 @@ int main() {
         printf("\n");
     }
 
-    return 0;
-  int compteur = 5;  // Modifiez cette valeur (< 10)
+    printf("\n=== Triangle avec boucles WHILE ===\n");
+
+    // Triangle avec WHILE
     int i = 1;
-
-    if (compteur >= 10) {
-        printf("Erreur : compteur doit être strictement inférieur à 10.\n");
-        return 1;
-    }
-
     while (i <= compteur) {
-
         int j = 1;
         while (j <= i) {
-
             if (i == 1 || i == 2 || i == compteur) {
                 printf("* ");
             } else {
@@ -53,17 +42,12 @@ int main() {
                 else
                     printf("# ");
             }
-
             j++;
         }
-
         printf("\n");
         i++;
     }
 
     return 0;
 }
-
-
-
 
