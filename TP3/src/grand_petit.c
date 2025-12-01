@@ -16,6 +16,13 @@ int main() {
         tab[i] = (rand() % 1000) + 1; // valeurs entre 1 et 1000
     }
 
+    /* --------------------- AFFICHAGE DU TABLEAU --------------------- */
+    printf("Contenu du tableau :\n");
+    for (i = 0; i < TAILLE; i++) {
+        printf("%d ", tab[i]);
+    }
+    printf("\n\n");
+
     /* --------------------- RECHERCHE PLUS PETIT & PLUS GRAND --------------------- */
     int min = tab[0];
     int max = tab[0];
