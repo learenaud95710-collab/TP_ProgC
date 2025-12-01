@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+#define NB_PHRASES 10
+#define TAILLE_MAX 200  // taille maximale pour la phrase à rechercher
+
+int main() {
+    // Tableau de 10 phrases
+    char *tableau[NB_PHRASES] = {
+        "Bonjour, comment ça va ?",
+        "Le temps est magnifique aujourd'hui.",
+        "C'est une belle journée.",
+        "La programmation en C est amusante.",
+        "Les tableaux en C sont puissants.",
+        "Les pointeurs en C peuvent être déroutants.",
+        "Il fait beau dehors.",
+        "La recherche dans un tableau est intéressante.",
+        "Les structures de données sont importantes.",
+        "Programmer en C, c'est génial."
+    };
+
+    char phrase[TAILLE_MAX];
+    int trouve = 0;
+
+    // Demander la phrase à rechercher
+    printf("Entrez la phrase à rechercher :\n");
+    fgets(phrase, TAILLE_MAX, stdin);
+
+    // Supprimer le '\n' si présent
+    int i = 0;
+    while (phrase[i] != '\0') {
+        if (phrase[i] == '\n') {
+            phrase[i] = '\0';
+            break;
+        }
+        i++;
+    }
+
+    // Parcourir le tableau de phrases
+    for (int j = 0; j < NB_PHRASES; j++) {
+        int k = 0;
+        int egal = 1; // supposons qu'elles sont égales
+
+        while (tableau[j][k] != '\0' && phrase[k] != '\0') {
+            if (tableau[j][k] != phrase[k]) {
+                egal = 0;
+                break;
+            }
+            k++;
+        }
+
+        // Si les deux chaînes se terminent en même temps et que tous les caractères sont égaux
+        if (egal && tableau[j][k] == '\0' && phrase[k] == '\0') {
+            trouve = 1;
+            break;
+        }
+    }
+
+    if (trouve) {
+        printf("Phrase trouvée.\n");
+    } else {
+        printf("Phrase non trouvée.\n");
+    }
+
+    return 0;
+}
