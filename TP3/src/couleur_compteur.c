@@ -45,6 +45,7 @@ int main() {
     /* --------------------- COMPTER LES COULEURS DISTINCTES --------------------- */
     for (int i = 0; i < TAILLE; i++) {
         int trouve = 0;
+
         for (int j = 0; j < nb_distinctes; j++) {
             if (couleurs_egales(tableau[i], distinctes[j].couleur)) {
                 distinctes[j].compteur++;
@@ -52,5 +53,20 @@ int main() {
                 break;
             }
         }
+
         if (!trouve) {
             distinctes[nb_distinctes].couleur = tableau[i];
+            distinctes[nb_distinctes].compteur = 1;
+            nb_distinctes++;
+        }
+    }
+
+    /* --------------------- AFFICHAGE DES COULEURS DISTINCTES --------------------- */
+    printf("Couleurs distinctes et occurrences :\n");
+    for (int i = 0; i < nb_distinctes; i++) {
+        afficher_couleur(distinctes[i].couleur);
+        printf(" : %d\n", distinctes[i].compteur);
+    }
+
+    return 0;
+}
